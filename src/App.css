@@ -1,3 +1,31 @@
 .App {
   text-align: center;
+  background-color: rgb(10, 13, 32);
+}
+
+header,
+main,
+footer {
+  margin: 0 auto;
+}
+
+header {
+  max-width: 1920px;
+}
+
+main,
+footer {
+  max-width: 1140px;
+}
+
+nav {
+  position: fixed;
+  background-color: white;
+  margin: 0 auto;
+  width: 100%;
+}
+
+section {
+  min-height: 650px;
+  width: 100%;
 }
