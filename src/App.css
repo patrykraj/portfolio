@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgb(10, 13, 32);
+  background-color: rgb(18, 11, 19);
 }
 
 header,
@@ -20,7 +20,8 @@ footer {
 
 nav {
   position: fixed;
-  background-color: white;
+  background-color: transparent;
+  color: #fff;
   margin: 0 auto;
   width: 100%;
 }
