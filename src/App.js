@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <nav>NAV</nav>
+      <nav style={{ zIndex: "110" }}>NAV</nav>
       <header>
         <Front setLoaded={setImageLoaded} />
       </header>
