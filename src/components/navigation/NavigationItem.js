@@ -1,9 +1,11 @@
 import React from "react";
 
+import Button from "../UI/Button";
+
 const NavigationItem = (props) => {
   return (
     <li>
-      <button href={props.to}>{props.name}</button>
+      <Button href={props.to}>{props.name}</Button>
     </li>
   );
 };

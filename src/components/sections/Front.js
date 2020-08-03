@@ -3,6 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import img from "../../images/heheh2.png";
 
+import Button from "../UI/Button";
+
 const Front = ({ setLoaded }) => {
   return (
     <HeaderContainer>
@@ -26,7 +28,7 @@ const Front = ({ setLoaded }) => {
             Patryk Krajewski
           </h1>
           <h2>Front-End Developer</h2>
-          <button>Contact</button>
+          <Button>Contact</Button>
         </div>
       </>
     </HeaderContainer>
@@ -89,7 +91,6 @@ const BackgroundImage = styled.img`
   height: 100%;
   object-fit: contain;
   position: absolute;
-  top: 50px;
   left: 0;
   z-index: 0;
 

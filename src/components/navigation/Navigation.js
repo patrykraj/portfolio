@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import NavigationItem from "./NavigationItem";
+import Button from "../UI/Button";
 
 const Navigation = ({ loaded }) => {
   const links = [
@@ -13,7 +14,7 @@ const Navigation = ({ loaded }) => {
 
   return (
     <Nav className={loaded ? "active" : null}>
-      <button>Patrykraj</button>
+      <Button>Patrykraj</Button>
       <NavList>
         {links.map((link) => (
           <NavigationItem key={link.name} to={link.to} name={link.name} />
@@ -33,7 +34,7 @@ const Nav = styled.div`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  height: 50px;
+  height: 60px;
   width: 100%;
   padding: 0 5%;
   transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 1s;
