@@ -8,29 +8,31 @@ import Button from "../UI/Button";
 const Front = ({ setLoaded }) => {
   return (
     <HeaderContainer>
-      <>
-        <BackgroundImage
-          src={img}
-          alt="background"
-          onLoad={(e) => {
-            setLoaded(true);
-            e.target.parentElement.classList.add("active");
+      <BackgroundImage
+        src={img}
+        alt="background"
+        onLoad={(e) => {
+          setLoaded(true);
+          e.target.parentElement.classList.add("active");
+        }}
+        draggable={false}
+      />
+      <div className="header-title">
+        <h1
+          style={{
+            fontWeight: "300",
+            letterSpacing: "2px",
+            fontSize: "3rem",
           }}
-        />
-        <div className="header-title">
-          <h1
-            style={{
-              fontWeight: "300",
-              letterSpacing: "2px",
-              fontSize: "3rem",
-            }}
-          >
-            Patryk Krajewski
-          </h1>
-          <h2>Front-End Developer</h2>
-          <Button>Contact</Button>
-        </div>
-      </>
+        >
+          Patryk Krajewski
+        </h1>
+        <h2>Front-End Developer</h2>
+        <Button>Contact</Button>
+      </div>
+      <ScrollNav>
+        <button></button>
+      </ScrollNav>
     </HeaderContainer>
   );
 };
@@ -96,5 +98,51 @@ const BackgroundImage = styled.img`
 
   @media (max-width: 1280px) {
     object-position: right;
+  }
+`;
+
+const ScrollNav = styled.div`
+  position: absolute;
+  bottom: 10px;
+  right: 5%;
+
+  button {
+    background: transparent;
+    border: 1px solid white;
+    border-top: 4px solid white;
+    border-bottom: 6px solid white;
+    border-radius: 3px;
+    width: 20px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
+      transform: rotate(45deg);
+      position: absolute;
+      animation: swipe 2s infinite linear;
+      animation-delay: 1.5s;
+      top: -100%;
+      left: 0;
+    }
+
+    @keyframes swipe {
+      0% {
+        top: -90%;
+      }
+      50% {
+        top: 0;
+      }
+      100% {
+        top: 90%;
+      }
+    }
   }
 `;
