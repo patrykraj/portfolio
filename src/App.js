@@ -3,6 +3,7 @@ import "./App.css";
 
 import Front from "./components/sections/Front";
 import Projects from "./components/sections/Projects";
+import Skills from "./components/sections/Skills";
 import Navigation from "./components/navigation/Navigation";
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
       <main>
         <section>
           <Projects />
+        </section>
+        <section>
+          <Skills />
         </section>
       </main>
       <footer>FOOTER</footer>

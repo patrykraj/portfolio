@@ -18,20 +18,16 @@ const Front = ({ setLoaded }) => {
         draggable={false}
       />
       <div className="header-title">
-        <h1
-          style={{
-            fontWeight: "300",
-            letterSpacing: "2px",
-            fontSize: "3rem",
-          }}
-        >
-          Patryk Krajewski
-        </h1>
+        <h1>Patryk Krajewski</h1>
         <h2>Front-End Developer</h2>
         <Button>Contact</Button>
       </div>
       <ScrollNav>
-        <button></button>
+        <button
+          onClick={(_) =>
+            window.scrollTo({ behavior: "smooth", top: window.innerHeight })
+          }
+        ></button>
       </ScrollNav>
     </HeaderContainer>
   );
@@ -66,6 +62,8 @@ const HeaderContainer = styled.div`
     position: fixed;
     display: block;
     z-index: 1;
+    top: 0;
+    left: 0;
 
     width: 100%;
     height: 100%;
@@ -84,6 +82,11 @@ const HeaderContainer = styled.div`
     .header-title {
       transform: translateY(0);
       opacity: 1;
+
+      h1 {
+        font-weight: 300;
+        font-size: 3rem;
+      }
     }
   }
 `;

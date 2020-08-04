@@ -3,12 +3,12 @@ import React from "react";
 import SectionContainer from "../styled/SectionContainer";
 import SectionTitle from "../styled/SectionTitle";
 
-const Projects = () => {
+const Skills = () => {
   return (
     <SectionContainer>
-      <SectionTitle>Projects</SectionTitle>
+      <SectionTitle>Skills</SectionTitle>
     </SectionContainer>
   );
 };
 
-export default Projects;
+export default Skills;
