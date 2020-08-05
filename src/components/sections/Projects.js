@@ -14,7 +14,8 @@ const Projects = () => {
       <ProjectsContainer>
         {ProjectsList.map((project) => (
           <Project
-            key={project.name}
+            key={project.id}
+            id={project.id}
             img={project.img}
             name={project.name}
             links={project.links}
