@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-import img from "../../images/heheh2.png";
+import bg from "../../images/heheh2.png";
 
 import Button from "../UI/Button";
 
@@ -9,7 +9,7 @@ const Front = ({ setLoaded }) => {
   return (
     <HeaderContainer>
       <BackgroundImage
-        src={img}
+        src={bg}
         alt="background"
         onLoad={(e) => {
           setLoaded(true);

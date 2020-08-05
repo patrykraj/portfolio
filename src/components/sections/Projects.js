@@ -5,21 +5,32 @@ import styled from "styled-components";
 import SectionContainer from "../styled/SectionContainer";
 import SectionTitle from "../styled/SectionTitle";
 import Project from "../Project";
+import ProjectsList from "../../assets/ProjectsList";
 
 const Projects = () => {
   return (
     <SectionContainer>
       <SectionTitle>Projects</SectionTitle>
-      <ProjectsList>
-        <Project />
-      </ProjectsList>
+      <ProjectsContainer>
+        {ProjectsList.map((project) => (
+          <Project
+            key={project.name}
+            img={project.img}
+            name={project.name}
+            links={project.links}
+            desc={project.desc}
+            tech={project.tech}
+          />
+        ))}
+      </ProjectsContainer>
     </SectionContainer>
   );
 };
 
 export default Projects;
 
-const ProjectsList = styled.ul`
+const ProjectsContainer = styled.ul`
   margin: 0;
   padding: 0;
+  list-style: none;
 `;

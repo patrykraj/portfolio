@@ -1,13 +1,42 @@
 import React from "react";
 
-const Project = (props) => {
+import styled from "styled-components";
+
+const Project = ({ name, img, links, desc, tech }) => {
   return (
-    <li>
+    <ListElement>
       <div>
-        <img src="../images/mybookapp.png" alt="pic" />
+        <img src={img} alt={name} style={{ maxWidth: "400px" }} />
       </div>
-    </li>
+      <div>
+        <ProjectTitle>{name}</ProjectTitle>
+        <Description>{desc}</Description>
+        <div>
+          {tech.map((technology) => (
+            <span key={technology}>{technology}</span>
+          ))}
+        </div>
+      </div>
+    </ListElement>
   );
 };
 
 export default Project;
+
+const ListElement = styled.li`
+  display: flex;
+
+  span {
+    margin-right: 10px;
+  }
+`;
+
+const ProjectTitle = styled.h3`
+  text-decoration: underline;
+  font-size: 1.5rem;
+`;
+
+const Description = styled.div`
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
