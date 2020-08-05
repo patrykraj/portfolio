@@ -14,7 +14,7 @@ const Project = ({ id, name, img, links, desc, tech }) => {
     >
       <div>
         <a href={links.demo} target="_blank" rel="noopener noreferrer">
-          <img src={img} alt={name} style={{ maxWidth: "400px" }} />
+          <img className="project-image" src={img} alt={name} />
         </a>
       </div>
       <ProjectInfoContainer>
@@ -48,6 +48,11 @@ const ListElement = styled.li`
 
   span {
     margin-right: 10px;
+  }
+
+  .project-image {
+    width: 400px;
+    max-height: 250px;
   }
 `;
 

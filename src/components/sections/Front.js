@@ -25,7 +25,10 @@ const Front = ({ setLoaded }) => {
       <ScrollNav>
         <button
           onClick={(_) =>
-            window.scrollTo({ behavior: "smooth", top: window.innerHeight })
+            window.scrollTo({
+              behavior: "smooth",
+              top: window.innerHeight,
+            })
           }
         ></button>
       </ScrollNav>

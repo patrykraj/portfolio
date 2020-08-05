@@ -28,6 +28,7 @@ export default Navigation;
 
 const Nav = styled.div`
   opacity: 0;
+  background: linear-gradient(rgb(18, 11, 19) 85%, transparent);
   transform: translateY(-20px);
   z-index: 100;
   display: flex;
@@ -42,6 +43,11 @@ const Nav = styled.div`
   &.active {
     opacity: 1;
     transform: translateY(0);
+
+    &.scroll {
+      transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0.2s;
+      transform: translateY(-100%);
+    }
   }
 `;
 
