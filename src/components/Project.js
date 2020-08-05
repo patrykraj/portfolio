@@ -70,7 +70,7 @@ const LinksContainer = styled.div`
     height: 1.4rem;
     width: 1.4rem;
     margin: 0 7px;
-    transition: transform 0.25s;
+    transition: transform 0.3s;
 
     &:hover {
       transform: scale(1.3);
