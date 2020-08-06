@@ -14,7 +14,7 @@ const Navigation = ({ loaded }) => {
 
   return (
     <Nav className={loaded ? "active" : null}>
-      <Button>Patrykraj</Button>
+      <Button>KRAYESKY</Button>
       <NavList>
         {links.map((link) => (
           <NavigationItem key={link.name} to={link.to} name={link.name} />

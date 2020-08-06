@@ -1,6 +1,7 @@
 import myBook from "../images/mybook.png";
 import millionaireQuiz from "../images/millionairequiz.png";
 import weatherForecast from "../images/weatherforecast.png";
+import companyData from "../images/companydata.png";
 
 const ProjectsList = [
   {
@@ -37,6 +38,18 @@ const ProjectsList = [
     },
     desc:
       "Simple, multilanguage (English & Polish) weather forecast app created to practice ReactJS. Current worldwide weather is available, additional feature is a night mode.",
+    tech: ["React"],
+  },
+  {
+    id: 4,
+    name: "CompanyData",
+    img: companyData,
+    links: {
+      demo: "https://patrykraj.github.io/random-data-app/",
+      source: "https://github.com/patrykraj/random-data-app/tree/master",
+    },
+    desc:
+      "CompanyData receives fictional company data from external API. It contains various features such as pagination, charts, slider, and loading screen.",
     tech: ["React"],
   },
 ];
