@@ -25,7 +25,7 @@ const ProjectsList = [
       source: "https://github.com/patrykraj/millionaire-quiz/tree/master",
     },
     desc:
-      "Millionaire quiz is based on a famous TV show. The most challenging part was to create effective but not overpowered lifelines which simulate real life probability of occuring an error. Includes ranking of the best results.",
+      "MillionaireQuiz is based on a famous TV show. The most challenging part was to create effective but not overpowered lifelines which simulate real life probability of occuring an error. Includes ranking of the best results.",
     tech: ["React"],
   },
   {
