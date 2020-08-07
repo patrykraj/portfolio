@@ -171,7 +171,7 @@ const SkillsList = styled.ul`
     justify-content: space-between;
     font-size: 1.2rem;
     padding: 5px 0;
-    width: 212px;
+    width: 252px;
 
     span {
       display: flex;

@@ -19,7 +19,7 @@ const Front = ({ setLoaded }) => {
       />
       <div className="header-title">
         <h1>Patryk Krajewski</h1>
-        <h2>Front-End Developer</h2>
+        <h2>Front End Developer</h2>
         <Button>Contact</Button>
       </div>
       <ScrollNav>
