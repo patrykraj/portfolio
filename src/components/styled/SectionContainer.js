@@ -6,7 +6,7 @@ const SectionContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2rem 1rem;
-  min-height: 650px;
+  min-height: 500px;
 `;
 
 export default SectionContainer;

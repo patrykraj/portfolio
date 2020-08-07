@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
+import Navigation from "./components/navigation/Navigation";
 import Front from "./components/sections/Front";
 import Projects from "./components/sections/Projects";
 import Skills from "./components/sections/Skills";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
-import Navigation from "./components/navigation/Navigation";
+import Footer from "./components/sections/Footer";
 
 function App() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -49,7 +50,7 @@ function App() {
           <Contact />
         </section>
       </main>
-      <footer>FOOTER</footer>
+      <Footer />
     </div>
   );
 }
