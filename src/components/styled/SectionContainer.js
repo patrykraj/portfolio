@@ -7,6 +7,7 @@ const SectionContainer = styled.div`
   align-items: center;
   margin: 2rem 1rem;
   min-height: 500px;
+  position: relative;
 `;
 
 export default SectionContainer;

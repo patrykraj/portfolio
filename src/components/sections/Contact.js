@@ -15,7 +15,7 @@ const Contact = () => {
         <ContactLinksContainer>
           <li>
             <a
-              href="https://github.com"
+              href="https://github.com/patrykraj"
               className="contact-link"
               target="_blank"
               rel="noopener noreferrer"
