@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
+import { connect } from "react-redux";
+import { getRefs } from "../../store/actions";
+
 import NavigationItem from "./NavigationItem";
 import Button from "../UI/Button";
 
-const Navigation = ({ loaded }) => {
+const Navigation = ({ loaded, sections }) => {
+  const { projects, skills, about, contact } = sections;
+
   const links = [
-    { to: "/", name: "projects" },
+    { to: "/", name: "projects", section: projects },
     { to: "/", name: "skills" },
     { to: "/", name: "about" },
     { to: "/", name: "contact" },
@@ -14,17 +19,31 @@ const Navigation = ({ loaded }) => {
 
   return (
     <Nav className={loaded ? "active" : null}>
-      <Button>KRAYESKY</Button>
+      <Button
+        click={() =>
+          window.scrollTo({
+            behavior: "smooth",
+            top: 0,
+          })
+        }
+      >
+        KRAYESKY
+      </Button>
       <NavList>
         {links.map((link) => (
-          <NavigationItem key={link.name} to={link.to} name={link.name} />
+          <NavigationItem
+            key={link.name}
+            to={link.to}
+            name={link.name}
+            section={link.section}
+          />
         ))}
       </NavList>
     </Nav>
   );
 };
 
-export default Navigation;
+export default connect(getRefs, null)(Navigation);
 
 const Nav = styled.div`
   opacity: 0;

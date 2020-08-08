@@ -7,11 +7,14 @@ import SectionTitle from "../styled/SectionTitle";
 import Project from "../Project";
 import ProjectsList from "../../assets/ProjectsList";
 
-const Projects = () => {
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
+
+const Projects = ({ onSetProjectsRef }) => {
   const projectsRef = useRef();
 
   useEffect(() => {
-    setProjectsRef(projectsRef);
+    onSetProjectsRef(projectsRef);
   });
 
   return (
@@ -34,7 +37,13 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSetProjectsRef: (ref) => dispatch(actions.setProjectsRef(ref)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Projects);
 
 const ProjectsContainer = styled.ul`
   margin: 0;

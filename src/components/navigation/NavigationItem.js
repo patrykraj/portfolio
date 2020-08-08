@@ -5,7 +5,20 @@ import Button from "../UI/Button";
 const NavigationItem = (props) => {
   return (
     <li>
-      <Button href={props.to}>{props.name}</Button>
+      <Button
+        href={props.to}
+        click={
+          props.section
+            ? (_) =>
+                props.section.current.scrollIntoView({
+                  block: "start",
+                  behavior: "smooth",
+                })
+            : null
+        }
+      >
+        {props.name}
+      </Button>
     </li>
   );
 };
