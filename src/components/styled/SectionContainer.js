@@ -5,9 +5,10 @@ const SectionContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem 1rem;
+  padding: 2rem 1rem;
   min-height: 500px;
   position: relative;
+  overflow: hidden;
 `;
 
 export default SectionContainer;

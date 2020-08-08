@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import styled from "styled-components";
 import {
@@ -21,9 +21,18 @@ import { AiFillFormatPainter } from "react-icons/ai";
 import SectionContainer from "../styled/SectionContainer";
 import SectionTitle from "../styled/SectionTitle";
 
-const Skills = () => {
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
+
+const Skills = ({ onSetSkillsRef }) => {
+  const skillsRef = useRef();
+
+  useEffect(() => {
+    onSetSkillsRef(skillsRef);
+  });
+
   return (
-    <SectionContainer>
+    <SectionContainer ref={skillsRef}>
       <SectionTitle>Skills</SectionTitle>
       <h2>Technologies that I worked with:</h2>
       <SkillsContainer>
@@ -147,7 +156,13 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSetSkillsRef: (ref) => dispatch(actions.setSkillsRef(ref)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Skills);
 
 const SkillsContainer = styled.div`
   display: flex;

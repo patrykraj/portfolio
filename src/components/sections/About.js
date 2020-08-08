@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import styled from "styled-components";
 
 import SectionContainer from "../styled/SectionContainer";
 import SectionTitle from "../styled/SectionTitle";
 
-const About = () => {
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
+
+const About = ({ onSetAboutRef }) => {
+  const aboutRef = useRef();
+
+  useEffect(() => {
+    onSetAboutRef(aboutRef);
+  });
+
   let x = 0;
   let y = 0;
 
@@ -19,7 +28,7 @@ const About = () => {
   });
 
   return (
-    <SectionContainer>
+    <SectionContainer ref={aboutRef}>
       <SectionTitle>About me</SectionTitle>
       <AboutMe>
         Hi, my name is Patryk and I'm a 24 years old software developer. I
@@ -35,7 +44,13 @@ const About = () => {
   );
 };
 
-export default About;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSetAboutRef: (ref) => dispatch(actions.setAboutRef(ref)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(About);
 
 const AboutMe = styled.p`
   font-size: 1.1rem;

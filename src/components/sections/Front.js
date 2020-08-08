@@ -5,7 +5,10 @@ import bg from "../../images/heheh2.png";
 
 import Button from "../UI/Button";
 
-const Front = ({ setLoaded }) => {
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
+
+const Front = ({ setLoaded, sections }) => {
   return (
     <HeaderContainer>
       <BackgroundImage
@@ -20,7 +23,16 @@ const Front = ({ setLoaded }) => {
       <div className="header-title">
         <h1>Patryk Krajewski</h1>
         <h2>Front End Developer</h2>
-        <Button>Contact</Button>
+        <Button
+          click={() => {
+            sections.contact.current.scrollIntoView({
+              block: "start",
+              behavior: "smooth",
+            });
+          }}
+        >
+          Contact
+        </Button>
       </div>
       <ScrollNav>
         <button
@@ -36,7 +48,13 @@ const Front = ({ setLoaded }) => {
   );
 };
 
-export default Front;
+const mapStateToProps = (state) => {
+  return {
+    sections: state.sections,
+  };
+};
+
+export default connect(mapStateToProps)(Front);
 
 const HeaderContainer = styled.div`
   height: 100vh;
@@ -64,7 +82,7 @@ const HeaderContainer = styled.div`
     content: "";
     position: fixed;
     display: block;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     left: 0;
 

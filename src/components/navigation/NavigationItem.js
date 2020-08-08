@@ -2,22 +2,22 @@ import React from "react";
 
 import Button from "../UI/Button";
 
-const NavigationItem = (props) => {
+const NavigationItem = ({ to, name, section }) => {
   return (
     <li>
       <Button
-        href={props.to}
+        href={to}
         click={
-          props.section
+          section
             ? (_) =>
-                props.section.current.scrollIntoView({
+                section.current.scrollIntoView({
                   block: "start",
                   behavior: "smooth",
                 })
             : null
         }
       >
-        {props.name}
+        {name}
       </Button>
     </li>
   );

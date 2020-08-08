@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import SectionContainer from "../styled/SectionContainer";
 import SectionTitle from "../styled/SectionTitle";
@@ -6,9 +6,18 @@ import SectionTitle from "../styled/SectionTitle";
 import styled from "styled-components";
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 
-const Contact = () => {
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
+
+const Contact = ({ onSetContactRef }) => {
+  const contactRef = useRef();
+
+  useEffect(() => {
+    onSetContactRef(contactRef);
+  });
+
   return (
-    <SectionContainer>
+    <SectionContainer ref={contactRef}>
       <SectionTitle>Contact</SectionTitle>
       <div>
         <h3>Contact me and check out my work:</h3>
@@ -58,7 +67,12 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSetContactRef: (ref) => dispatch(actions.setContactRef(ref)),
+  };
+};
+export default connect(null, mapDispatchToProps)(Contact);
 
 const ContactLinksContainer = styled.ul`
   list-style: none;

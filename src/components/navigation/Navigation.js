@@ -12,9 +12,9 @@ const Navigation = ({ loaded, sections }) => {
 
   const links = [
     { to: "/", name: "projects", section: projects },
-    { to: "/", name: "skills" },
-    { to: "/", name: "about" },
-    { to: "/", name: "contact" },
+    { to: "/", name: "skills", section: skills },
+    { to: "/", name: "about", section: about },
+    { to: "/", name: "contact", section: contact },
   ];
 
   return (
