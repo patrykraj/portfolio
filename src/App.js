@@ -9,6 +9,9 @@ import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 
+import { Provider } from "react-redux";
+import store from "./store/store";
+
 function App() {
   const [imageLoaded, setImageLoaded] = useState(false);
   let scrolled = 0;
@@ -29,29 +32,31 @@ function App() {
   }, [imageLoaded]);
 
   return (
-    <div className="App">
-      <nav>
-        <Navigation loaded={imageLoaded} />
-      </nav>
-      <header>
-        <Front setLoaded={setImageLoaded} />
-      </header>
-      <main>
-        <section>
-          <Projects />
-        </section>
-        <section>
-          <Skills />
-        </section>
-        <section>
-          <About />
-        </section>
-        <section>
-          <Contact />
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <nav>
+          <Navigation loaded={imageLoaded} />
+        </nav>
+        <header>
+          <Front setLoaded={setImageLoaded} />
+        </header>
+        <main>
+          <section>
+            <Projects />
+          </section>
+          <section>
+            <Skills />
+          </section>
+          <section>
+            <About />
+          </section>
+          <section>
+            <Contact />
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 

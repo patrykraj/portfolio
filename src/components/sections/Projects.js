@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import styled from "styled-components";
 
@@ -8,8 +8,14 @@ import Project from "../Project";
 import ProjectsList from "../../assets/ProjectsList";
 
 const Projects = () => {
+  const projectsRef = useRef();
+
+  useEffect(() => {
+    setProjectsRef(projectsRef);
+  });
+
   return (
-    <SectionContainer>
+    <SectionContainer ref={projectsRef}>
       <SectionTitle>Projects</SectionTitle>
       <ProjectsContainer>
         {ProjectsList.map((project) => (

@@ -7,6 +7,7 @@ const SectionTitle = styled.h2`
   font-weight: 300;
   letter-spacing: 1px;
   margin-bottom: 2rem;
+  z-index: 1;
 `;
 
 export default SectionTitle;
