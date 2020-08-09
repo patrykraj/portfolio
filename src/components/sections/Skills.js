@@ -15,8 +15,7 @@ import {
   DiWordpress,
   DiPhp,
 } from "react-icons/di";
-import { FaVuejs, FaNode } from "react-icons/fa";
-import { AiFillFormatPainter } from "react-icons/ai";
+import { FaVuejs, FaNode, FaPaintRoller } from "react-icons/fa";
 
 import SectionContainer from "../styled/SectionContainer";
 import SectionTitle from "../styled/SectionTitle";
@@ -84,7 +83,7 @@ const Skills = ({ onSetSkillsRef }) => {
           </li>
           <li className="skill-element">
             <span role="img" aria-label="styled-components">
-              <AiFillFormatPainter />
+              <FaPaintRoller />
             </span>
             Styled-components
           </li>
