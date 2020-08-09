@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { connect } from "react-redux";
@@ -9,6 +9,22 @@ import Button from "../UI/Button";
 
 const Navigation = ({ loaded, sections }) => {
   const { projects, skills, about, contact } = sections;
+
+  useEffect(() => {
+    let scrolled = 0;
+    window.addEventListener("scroll", () => {
+      const move = window.scrollY - scrolled;
+      scrolled = window.scrollY;
+
+      if (!loaded) return;
+
+      if (move > 20 && scrolled > 200) {
+        document.querySelector("nav div.active").classList.add("scroll");
+      } else if (move < 0) {
+        document.querySelector("nav div.active").classList.remove("scroll");
+      }
+    });
+  }, [loaded]);
 
   const links = [
     { to: "/", name: "projects", section: projects },

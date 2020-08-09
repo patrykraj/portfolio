@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import Navigation from "./components/navigation/Navigation";
@@ -14,22 +14,6 @@ import store from "./store/store";
 
 function App() {
   const [imageLoaded, setImageLoaded] = useState(false);
-  let scrolled = 0;
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const move = window.scrollY - scrolled;
-      scrolled = window.scrollY;
-
-      if (!imageLoaded) return;
-
-      if (move > 0 && scrolled > 200) {
-        document.querySelector("nav div.active").classList.add("scroll");
-      } else if (move < 0) {
-        document.querySelector("nav div.active").classList.remove("scroll");
-      }
-    });
-  }, [imageLoaded]);
 
   return (
     <Provider store={store}>

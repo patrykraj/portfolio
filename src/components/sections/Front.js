@@ -6,7 +6,6 @@ import bg from "../../images/heheh2.png";
 import Button from "../UI/Button";
 
 import { connect } from "react-redux";
-import * as actions from "../../store/actions";
 
 const Front = ({ setLoaded, sections }) => {
   return (
