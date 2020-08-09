@@ -1,23 +1,111 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 
 import { ReactComponent as Github } from "../images/github.svg";
 import { ReactComponent as Demo } from "../images/demo.svg";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 const Project = ({ id, name, img, links, desc, tech }) => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const slideInLeft = document.querySelectorAll(".slideIn-Left");
+
+    slideInLeft.forEach((wrapper) => {
+      gsap.fromTo(
+        wrapper,
+        { x: "-=100", opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 1,
+          scrollTrigger: {
+            trigger: wrapper,
+            start: "top 70%",
+          },
+        }
+      );
+    });
+
+    const slideInLeftContainer = document.querySelectorAll(
+      ".slideIn-LeftContainer"
+    );
+
+    slideInLeftContainer.forEach((wrapper) => {
+      gsap.fromTo(
+        wrapper.children,
+        { x: "-=100", opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          scrollTrigger: {
+            trigger: wrapper,
+            start: "top 70%",
+          },
+        }
+      );
+    });
+
+    const slideInRightContainer = document.querySelectorAll(
+      ".slideIn-RightContainer"
+    );
+
+    slideInRightContainer.forEach((wrapper) => {
+      gsap.fromTo(
+        wrapper.children,
+        { x: "+=100", opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          scrollTrigger: {
+            trigger: wrapper,
+            start: "top 70%",
+          },
+        }
+      );
+    });
+
+    const slideInRight = document.querySelectorAll(".slideIn-Right");
+
+    slideInRight.forEach((wrapper) => {
+      gsap.fromTo(
+        wrapper,
+        { x: "+=100", opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: wrapper,
+            start: "top 80%",
+          },
+        }
+      );
+    });
+  });
+
   return (
     <ListElement
       style={{
         flexFlow: id % 2 === 0 ? "row" : "row-reverse",
       }}
     >
-      <div>
+      <div className={id % 2 === 0 ? "slideIn-Left" : "slideIn-Right"}>
         <a href={links.demo} target="_blank" rel="noopener noreferrer">
           <img className="project-image" src={img} alt={name} />
         </a>
       </div>
-      <ProjectInfoContainer>
+      <ProjectInfoContainer
+        className={id % 2 === 0 ? "slideIn-Right" : "slideIn-Left"}
+      >
         <ListElementHeader>
           <ProjectTitle>{name}</ProjectTitle>
           <LinksContainer>

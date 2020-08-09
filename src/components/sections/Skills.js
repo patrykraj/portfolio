@@ -36,7 +36,7 @@ const Skills = ({ onSetSkillsRef }) => {
       <SectionTitle>Skills</SectionTitle>
       <h2>Technologies that I worked with:</h2>
       <SkillsContainer>
-        <SkillsList>
+        <SkillsList className="slideIn-LeftContainer">
           <li className="skills-header">
             <h4>Front End:</h4>
           </li>
@@ -101,7 +101,7 @@ const Skills = ({ onSetSkillsRef }) => {
             GIT
           </li>
         </SkillsList>
-        <SkillsList>
+        <SkillsList className="slideIn-RightContainer">
           <li className="skills-header">
             <h4>Back End:</h4>
           </li>
@@ -132,7 +132,7 @@ const Skills = ({ onSetSkillsRef }) => {
         </SkillsList>
       </SkillsContainer>
       <h2>Technologies that I am currently learning:</h2>
-      <SkillsList>
+      <SkillsList className="slideIn-RightContainer">
         <li className="skill-element">
           Wordpress
           <span role="img" aria-label="express">

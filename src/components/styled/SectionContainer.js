@@ -8,7 +8,6 @@ const SectionContainer = styled.div`
   padding: 2rem 1rem;
   min-height: 500px;
   position: relative;
-  overflow: hidden;
 `;
 
 export default SectionContainer;
