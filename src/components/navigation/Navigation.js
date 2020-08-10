@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { connect } from "react-redux";
@@ -9,6 +9,7 @@ import Button from "../UI/Button";
 
 const Navigation = ({ loaded, sections }) => {
   const { projects, skills, about, contact } = sections;
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     let scrolled = 0;
@@ -45,7 +46,7 @@ const Navigation = ({ loaded, sections }) => {
       >
         KRAYESKY
       </Button>
-      <NavList>
+      <NavList className={showNav ? null : "hide"}>
         {links.map((link) => (
           <NavigationItem
             key={link.name}
@@ -55,6 +56,14 @@ const Navigation = ({ loaded, sections }) => {
           />
         ))}
       </NavList>
+      <Button
+        click={() => {
+          setShowNav(!showNav);
+        }}
+        nav
+      >
+        <div></div>
+      </Button>
     </Nav>
   );
 };
@@ -84,9 +93,32 @@ const Nav = styled.div`
       transform: translateY(-100%);
     }
   }
+
+  @media (max-width: 800px) {
+    background: rgb(18, 11, 19);
+  }
 `;
 
 const NavList = styled.ul`
   display: flex;
   list-style: none;
+
+  @media (max-width: 800px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+    width: 100%;
+    flex-flow: column;
+    background: linear-gradient(rgb(18, 11, 19) 98%, transparent);
+    transition: all 0.6s;
+
+    &.hide {
+      transform: translateY(calc(-110% - 60px));
+    }
+
+    li {
+      padding: 10px 0;
+    }
+  }
 `;
