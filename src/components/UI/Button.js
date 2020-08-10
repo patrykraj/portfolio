@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = (props) => {
+const Button = ({ click, nav, open, children }) => {
   return (
     <StyledButton
-      onClick={props.click}
-      className={props.nav ? "nav-trigger" : null}
+      onClick={click}
+      className={nav && open ? "nav-trigger open" : nav ? "nav-trigger" : null}
     >
-      {props.children}
+      {children}
     </StyledButton>
   );
 };
@@ -70,14 +70,33 @@ const StyledButton = styled.button`
         background: transparent;
       }
 
+      &.open {
+        div {
+          transform: translateY(10px);
+          transform-origin: center;
+
+          &::before {
+            opacity: 0;
+          }
+
+          &::after {
+            transform: translateY(-20px);
+            animation: xd 0.5s linear 1s;
+            transform-origin: center;
+          }
+        }
+      }
+
       div {
         position: absolute;
         top: 0;
         background: white;
         width: 100%;
         height: 3px;
+        transition: all 0.5s;
 
         &::before {
+          transition: all 0.5s;
           position: absolute;
           top: 10px;
           left: 0;
@@ -88,6 +107,7 @@ const StyledButton = styled.button`
         }
 
         &::after {
+          transition: all 0.5s;
           position: absolute;
           top: 20px;
           left: 0;

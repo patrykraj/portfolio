@@ -19,8 +19,9 @@ const Navigation = ({ loaded, sections }) => {
 
       if (!loaded) return;
 
-      if (move > 20 && scrolled > 200) {
+      if (move > 0 && scrolled > 200) {
         document.querySelector("nav div.active").classList.add("scroll");
+        if (window.innerWidth < 800) setShowNav(false);
       } else if (move < 0) {
         document.querySelector("nav div.active").classList.remove("scroll");
       }
@@ -37,12 +38,14 @@ const Navigation = ({ loaded, sections }) => {
   return (
     <Nav className={loaded ? "active" : null}>
       <Button
-        click={() =>
+        click={() => {
           window.scrollTo({
             behavior: "smooth",
             top: 0,
-          })
-        }
+          });
+
+          setShowNav(!showNav);
+        }}
       >
         KRAYESKY
       </Button>
@@ -53,6 +56,9 @@ const Navigation = ({ loaded, sections }) => {
             to={link.to}
             name={link.name}
             section={link.section}
+            handleNav={() => {
+              setShowNav(!showNav);
+            }}
           />
         ))}
       </NavList>
@@ -61,6 +67,7 @@ const Navigation = ({ loaded, sections }) => {
           setShowNav(!showNav);
         }}
         nav
+        open={showNav}
       >
         <div></div>
       </Button>
@@ -107,14 +114,16 @@ const NavList = styled.ul`
     position: absolute;
     top: 0;
     left: 0;
+    justify-content: center;
+    height: calc(100vh - 60px);
     margin-top: 60px;
     width: 100%;
     flex-flow: column;
-    background: linear-gradient(rgb(18, 11, 19) 98%, transparent);
+    background: rgb(18, 11, 19);
     transition: all 0.6s;
 
     &.hide {
-      transform: translateY(calc(-110% - 60px));
+      transform: translateX(calc(-110%));
     }
 
     li {
