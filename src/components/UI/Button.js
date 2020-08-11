@@ -105,10 +105,6 @@ const StyledButton = styled.button`
             transform: translate3d(-6px, 2px, 0) rotate(-45deg) scaleX(0.7);
           }
 
-          span:nth-child(2) {
-            // opacity: 0;
-          }
-
           span:nth-child(3) {
             transform: translate3d(-6px, -2px, 0) rotate(45deg) scaleX(0.7);
           }

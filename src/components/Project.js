@@ -139,8 +139,27 @@ const ListElement = styled.li`
   }
 
   .project-image {
+    border: 4px solid rgba(255, 255, 255, 0.1);
     width: 400px;
     max-height: 250px;
+  }
+
+  @media (max-width: 800px) {
+    display: block;
+
+    .project-image {
+      width: 100%;
+      max-width: 600px;
+      max-height: 350px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .project-image {
+      width: 100%;
+      max-width: 400px;
+      max-height: 250px;
+    }
   }
 `;
 
@@ -148,6 +167,11 @@ const ProjectInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 800px) {
+    margin: 2rem auto 0;
+    max-width: 600px;
+  }
 `;
 
 const ListElementHeader = styled.div`

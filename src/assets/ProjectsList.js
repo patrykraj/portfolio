@@ -1,4 +1,4 @@
-import myBook from "../images/mybook.png";
+import myBook from "../images/mybook-650w.png";
 import millionaireQuiz from "../images/millionairequiz.png";
 import weatherForecast from "../images/weatherforecast.png";
 import companyData from "../images/companydata.png";
