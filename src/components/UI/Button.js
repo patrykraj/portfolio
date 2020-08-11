@@ -60,61 +60,58 @@ const StyledButton = styled.button`
   @media (max-width: 801px) {
     &.nav-trigger {
       display: block;
+      border: none;
       width: 30px;
       height: 20px;
-      border: none;
-      position: relative;
       padding: 0;
 
       &::before {
         background: transparent;
       }
 
-      &.open {
-        div {
-          transform: translateY(10px);
-          transform-origin: center;
+      div {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 20px;
 
-          &::before {
-            opacity: 0;
-          }
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: white;
+          border-radius: 5px;
+          width: 100%;
+          height: 3px;
+          transition: all 0.3s;
+        }
 
-          &::after {
-            transform: translateY(-20px);
-            animation: xd 0.5s linear 1s;
-            transform-origin: center;
-          }
+        span:nth-child(1) {
+          top: 0;
+        }
+
+        span:nth-child(2) {
+          top: 10px;
+        }
+
+        span:nth-child(3) {
+          top: 20px;
         }
       }
 
-      div {
-        position: absolute;
-        top: 0;
-        background: white;
-        width: 100%;
-        height: 3px;
-        transition: all 0.5s;
+      &.open {
+        div {
+          span:nth-child(1) {
+            transform: translate3d(-6px, 2px, 0) rotate(-45deg) scaleX(0.7);
+          }
 
-        &::before {
-          transition: all 0.5s;
-          position: absolute;
-          top: 10px;
-          left: 0;
-          content: "";
-          background: white;
-          width: 100%;
-          height: 3px;
-        }
+          span:nth-child(2) {
+            // opacity: 0;
+          }
 
-        &::after {
-          transition: all 0.5s;
-          position: absolute;
-          top: 20px;
-          left: 0;
-          content: "";
-          background: white;
-          width: 100%;
-          height: 3px;
+          span:nth-child(3) {
+            transform: translate3d(-6px, -2px, 0) rotate(45deg) scaleX(0.7);
+          }
         }
       }
     }

@@ -52,15 +52,6 @@ const Navigation = ({ loaded, sections }) => {
       </Button>
       <NavBar links={links} />
       <SideBar links={links} showNav={showNav} setShowNav={setShowNav} />
-      <Button
-        click={() => {
-          setShowNav(!showNav);
-        }}
-        nav
-        open={showNav}
-      >
-        <div></div>
-      </Button>
     </Nav>
   );
 };

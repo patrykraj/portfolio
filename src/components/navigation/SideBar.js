@@ -2,22 +2,39 @@ import React from "react";
 import styled from "styled-components";
 
 import NavigationItem from "./NavigationItem";
+import Button from "../UI/Button";
 
 const SideBar = ({ links, showNav, setShowNav }) => {
   return (
-    <SideList className={showNav ? null : "hide"}>
-      {links.map((link) => (
-        <NavigationItem
-          key={link.name}
-          to={link.to}
-          name={link.name}
-          section={link.section}
-          handleNav={() => {
-            setShowNav(!showNav);
-          }}
-        />
-      ))}
-    </SideList>
+    <>
+      <SideList className={showNav ? null : "hide"}>
+        {links.map((link) => (
+          <NavigationItem
+            key={link.name}
+            to={link.to}
+            name={link.name}
+            section={link.section}
+            handleNav={() => {
+              setShowNav(!showNav);
+            }}
+          />
+        ))}
+      </SideList>
+
+      <Button
+        click={() => {
+          setShowNav(!showNav);
+        }}
+        nav
+        open={showNav}
+      >
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </Button>
+    </>
   );
 };
 
