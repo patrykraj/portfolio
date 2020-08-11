@@ -69,6 +69,10 @@ const StyledButton = styled.button`
         background: transparent;
       }
 
+      &:focus {
+        outline: none;
+      }
+
       div {
         position: relative;
         top: 0;
