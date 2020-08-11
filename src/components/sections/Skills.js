@@ -169,6 +169,10 @@ const SkillsContainer = styled.div`
   ul + ul {
     margin: 2rem;
   }
+
+  @media (max-width: 650px) {
+    flex-flow: column;
+  }
 `;
 
 const SkillsList = styled.ul`
@@ -190,6 +194,17 @@ const SkillsList = styled.ul`
     span {
       display: flex;
       margin: 0 10px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .skill-element {
+      margin: 0 auto;
+      width: 202px;
+
+      span {
+        margin: 0;
+      }
     }
   }
 `;
