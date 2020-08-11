@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { getRefs } from "../../store/actions";
 
-import NavigationItem from "./NavigationItem";
+import NavBar from "./NavBar";
+import SideBar from "./SideBar";
 import Button from "../UI/Button";
 
 const Navigation = ({ loaded, sections }) => {
@@ -44,24 +45,13 @@ const Navigation = ({ loaded, sections }) => {
             top: 0,
           });
 
-          setShowNav(!showNav);
+          setShowNav(false);
         }}
       >
         KRAYESKY
       </Button>
-      <NavList className={showNav ? null : "hide"}>
-        {links.map((link) => (
-          <NavigationItem
-            key={link.name}
-            to={link.to}
-            name={link.name}
-            section={link.section}
-            handleNav={() => {
-              setShowNav(!showNav);
-            }}
-          />
-        ))}
-      </NavList>
+      <NavBar links={links} />
+      <SideBar links={links} showNav={showNav} setShowNav={setShowNav} />
       <Button
         click={() => {
           setShowNav(!showNav);
@@ -103,31 +93,5 @@ const Nav = styled.div`
 
   @media (max-width: 800px) {
     background: rgb(18, 11, 19);
-  }
-`;
-
-const NavList = styled.ul`
-  display: flex;
-  list-style: none;
-
-  @media (max-width: 800px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    justify-content: center;
-    height: calc(100vh - 60px);
-    margin-top: 60px;
-    width: 100%;
-    flex-flow: column;
-    background: rgb(18, 11, 19);
-    transition: all 0.6s;
-
-    &.hide {
-      transform: translateX(calc(-110%));
-    }
-
-    li {
-      padding: 10px 0;
-    }
   }
 `;

@@ -14,7 +14,7 @@ const NavigationItem = ({ to, name, section, handleNav }) => {
                   block: "start",
                   behavior: "smooth",
                 });
-                handleNav();
+                if (handleNav) handleNav();
               }
             : null
         }
