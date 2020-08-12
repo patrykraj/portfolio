@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 import bg from "../../images/heheh2.png";
@@ -8,6 +8,13 @@ import Button from "../UI/Button";
 import { connect } from "react-redux";
 
 const Front = ({ setLoaded, sections }) => {
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
+  });
+
   return (
     <HeaderContainer>
       <BackgroundImage
@@ -56,7 +63,7 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(Front);
 
 const HeaderContainer = styled.div`
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   display: flex;
   justify-content: center;
