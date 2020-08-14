@@ -16,6 +16,7 @@ import {
   DiPhp,
 } from "react-icons/di";
 import { FaVuejs, FaNode, FaPaintRoller } from "react-icons/fa";
+import { GiJesterHat } from "react-icons/gi";
 
 import SectionContainer from "../styled/SectionContainer";
 import SectionTitle from "../styled/SectionTitle";
@@ -80,6 +81,12 @@ const Skills = ({ onSetSkillsRef }) => {
               <FaVuejs />
             </span>
             Vue
+          </li>
+          <li className="skill-element">
+            <span role="img" aria-label="jest">
+              <GiJesterHat />
+            </span>
+            Jest
           </li>
           <li className="skill-element">
             <span role="img" aria-label="styled-components">

@@ -14,7 +14,7 @@ const ProjectsList = [
     },
     desc:
       "MyBook allows users to create account and add books on their personal bookshelf and modify their status, such as read date.",
-    tech: ["React (incl. hooks)", "Redux", "Firebase"],
+    tech: ["React (incl. hooks)", "Redux", "Firebase", "Jest"],
   },
   {
     id: 2,
