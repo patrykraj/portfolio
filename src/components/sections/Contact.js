@@ -37,7 +37,7 @@ const Contact = ({ onSetContactRef }) => {
           </li>
           <li>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/patryk-krajewski-9997071b4"
               className="contact-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -50,7 +50,7 @@ const Contact = ({ onSetContactRef }) => {
           </li>
           <li>
             <a
-              href="https://gmail.com"
+              href="mailto:patrykraj@interia.pl"
               className="contact-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -58,7 +58,7 @@ const Contact = ({ onSetContactRef }) => {
               <span>
                 <AiOutlineMail />
               </span>
-              patryk081108@gmail.com
+              patrykraj@interia.pl
             </a>
           </li>
         </ContactLinksContainer>
