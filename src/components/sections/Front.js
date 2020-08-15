@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import styled from "styled-components";
-import bg from "../../images/heheh2.png";
+import bg from "../../images/earth.png";
 
 import Button from "../UI/Button";
 
