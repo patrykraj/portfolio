@@ -83,6 +83,12 @@ const Skills = ({ onSetSkillsRef }) => {
             Vue
           </li>
           <li className="skill-element">
+            <span role="img" aria-label="vue">
+              <FaVuejs />
+            </span>
+            Vuex
+          </li>
+          <li className="skill-element">
             <span role="img" aria-label="jest">
               <GiJesterHat />
             </span>

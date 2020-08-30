@@ -1,7 +1,8 @@
 import myBook from "../images/mybook.png";
 import millionaireQuiz from "../images/millionairequiz.png";
 import weatherForecast from "../images/weatherforecast.png";
-import companyData from "../images/companydata.png";
+import shopTemplate from "../images/shop-template.png";
+import portfolio from "../images/portfolio.png";
 
 const ProjectsList = [
   {
@@ -18,38 +19,48 @@ const ProjectsList = [
   },
   {
     id: 2,
-    name: "MillionaireQuiz",
-    img: millionaireQuiz,
+    name: "ShopTemplate",
+    img: shopTemplate,
     links: {
-      demo: "https://patrykraj.github.io/millionaire-quiz/",
-      source: "https://github.com/patrykraj/millionaire-quiz/tree/master",
+      demo: "https://shop-template-krayesky.netlify.app/",
+      source: "https://github.com/patrykraj/shop-template",
     },
     desc:
-      "MillionaireQuiz is based on a famous TV show. The most challenging part was to create effective but not overpowered lifelines which simulate real life probability of occuring an error. Includes ranking of the best results.",
-    tech: ["React"],
+      "Project created with Vue & Vuex. Products are fetched from API. The main features are complex filters, pagination, and shopping cart. Products added to the cart are saved in localStorage therefore user can go back to them anytime.",
+    tech: ["Vue", "Vuex", "Vue-router"],
   },
   {
     id: 3,
-    name: "WeatherForecast",
-    img: weatherForecast,
+    name: "Portfolio",
+    img: portfolio,
     links: {
-      demo: "https://patrykraj.github.io/weather-forecast-app/",
-      source: "https://github.com/patrykraj/weather-forecast-app/tree/master",
+      source: "https://github.com/patrykraj/portfolio-project",
     },
-    desc:
-      "Simple, multilanguage (English & Polish) weather forecast app created to practice ReactJS. Current worldwide weather is available, additional feature is a night mode.",
-    tech: ["React"],
+    desc: "This site. Animations created with GSAP ScrollTrigger.",
+    tech: ["React", "Redux"],
   },
   {
     id: 4,
-    name: "CompanyData",
-    img: companyData,
+    name: "MillionaireQuiz",
+    img: millionaireQuiz,
     links: {
-      demo: "https://patrykraj.github.io/random-data-app/",
-      source: "https://github.com/patrykraj/random-data-app/tree/master",
+      demo: "https://millionaire-quiz.netlify.app/",
+      source: "https://github.com/patrykraj/millionaire-quiz",
     },
     desc:
-      "CompanyData receives fictional company data from external API. It contains various features such as pagination, charts, slider, and loading screen.",
+      "MillionaireQuiz is based on a famous TV show. The most challenging part was to create effective but not overpowered lifelines which simulate real life probability of occuring an error. Includes ranking of the best results.",
+    tech: ["React", "React-router"],
+  },
+  {
+    id: 5,
+    name: "WeatherForecast",
+    img: weatherForecast,
+    links: {
+      demo: "https://weather-forecast-krayesky.netlify.app/",
+      source: "https://github.com/patrykraj/weather-forecast-app",
+    },
+    desc:
+      "Simple, multilanguage (English & Polish) weather forecast app created to practice ReactJS. Current worldwide weather is available, additional feature is a night mode.",
     tech: ["React"],
   },
 ];

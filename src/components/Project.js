@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 
 import styled from "styled-components";
 
-import { ReactComponent as Github } from "../images/github.svg";
-import { ReactComponent as Demo } from "../images/demo.svg";
+import { AiFillGithub } from "react-icons/ai";
+import { MdWebAsset } from "react-icons/md";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -110,11 +110,13 @@ const Project = ({ id, name, img, links, desc, tech }) => {
           <ProjectTitle>{name}</ProjectTitle>
           <LinksContainer>
             <a href={links.source} target="_blank" rel="noopener noreferrer">
-              <Github height="1rem" />
+              <AiFillGithub height="1rem" />
             </a>
-            <a href={links.demo} target="_blank" rel="noopener noreferrer">
-              <Demo height="1rem" />
-            </a>
+            {links.demo ? (
+              <a href={links.demo} target="_blank" rel="noopener noreferrer">
+                <MdWebAsset height="1rem" />
+              </a>
+            ) : null}
           </LinksContainer>
         </ListElementHeader>
         <Description>{desc}</Description>
@@ -167,6 +169,7 @@ const ProjectInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
 
   @media (max-width: 800px) {
     margin: 2rem auto 0;
@@ -184,6 +187,7 @@ const LinksContainer = styled.div`
   display: flex;
 
   svg {
+    color: white;
     height: 1.4rem;
     width: 1.4rem;
     margin: 0 7px;
