@@ -37,7 +37,7 @@ const About = ({ onSetAboutRef }) => {
         then I worked hard everyday to become a developer. My ultimate goal is
         to be an entirely independent full-stack. I also have a degree in
         English Studies with IT (English C1 level). Currenty I'm looking for a
-        job as a Front End Developer in Massachussets.
+        job as a Front End Developer in Poland.
       </AboutMe>
       <AboutBg className="about-bg" />
     </SectionContainer>
