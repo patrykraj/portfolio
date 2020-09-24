@@ -48,7 +48,7 @@ const ProjectsList = [
       source: "https://github.com/patrykraj/millionaire-quiz",
     },
     desc:
-      "MillionaireQuiz is based on a famous TV show. The most challenging part was to create effective but not overpowered lifelines which simulate real life probability of occuring an error. Includes ranking of the best results.",
+      "One of my first React apps. It is based on a famous TV show. The most challenging part was to create effective but not overpowered lifelines which simulate real life probability of receiving incorrect answer. Includes ranking of the best results (in localStorage).",
     tech: ["React (hooks)", "Context", "CSS-modules"],
   },
   // {
