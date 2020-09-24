@@ -1,3 +1,5 @@
+![Portfolio](https://i.imgur.com/ePZyt3i.png)
+
 # KRAYESKY.DEV
 
 Hi! My personal portfolio project created with create-react-app.
@@ -8,6 +10,7 @@ Hi! My personal portfolio project created with create-react-app.
 - Redux
 - GSAP
 - Styled-Components
+- React-icons
 
 ## Installation
 
