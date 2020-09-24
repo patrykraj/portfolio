@@ -37,7 +37,7 @@ const ProjectsList = [
       source: "https://github.com/patrykraj/portfolio-project",
     },
     desc: "This site. Animations created with GSAP ScrollTrigger.",
-    tech: ["React", "Redux", "Styled-components"],
+    tech: ["React (hooks)", "Redux", "Styled-components"],
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const ProjectsList = [
     },
     desc:
       "MillionaireQuiz is based on a famous TV show. The most challenging part was to create effective but not overpowered lifelines which simulate real life probability of occuring an error. Includes ranking of the best results.",
-    tech: ["React", "React-router"],
+    tech: ["React (hooks)", "Context", "CSS-modules"],
   },
   // {
   //   id: 5,

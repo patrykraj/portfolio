@@ -16,7 +16,6 @@ import {
   DiPhp,
 } from "react-icons/di";
 import { FaVuejs, FaNode, FaPaintRoller } from "react-icons/fa";
-// import { GiJesterHat } from "react-icons/gi";
 
 import SectionContainer from "../styled/SectionContainer";
 import SectionTitle from "../styled/SectionTitle";
